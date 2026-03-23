@@ -25,7 +25,7 @@ def latest_q(df: pd.DataFrame, year: int) -> pd.Series:
 def fetch_financial_data(ticker: str) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     from vnstock import Vnstock
 
-    stock = Vnstock().stock(symbol=ticker.upper().strip(), source="VCI")
+    stock = Vnstock().stock(symbol=ticker.upper().strip(), source="TCBS")
     iq = stock.finance.income_statement(period="quarter", lang="en")
     bq = stock.finance.balance_sheet(period="quarter", lang="en")
     cq = stock.finance.cash_flow(period="quarter", lang="en")
